@@ -19,8 +19,29 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "True Path Athletics | Premium Sports Development",
-  description: "Guiding athletes and parents through every stage of development to reduce burnout and maximize potential.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://truepathathletics.com"),
+  title: {
+    default: "True Path Athletics | Premium Sports Development",
+    template: "%s | True Path Athletics",
+  },
+  description:
+    "Guiding athletes and parents through every stage of development to reduce burnout and maximize potential.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "True Path Athletics | Premium Sports Development",
+    description:
+      "Guiding athletes and parents through every stage of development to reduce burnout and maximize potential.",
+    type: "website",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "True Path Athletics | Premium Sports Development",
+    description:
+      "Guiding athletes and parents through every stage of development to reduce burnout and maximize potential.",
+  },
 };
 
 export default function RootLayout({

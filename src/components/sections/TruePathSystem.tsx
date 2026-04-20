@@ -10,7 +10,7 @@
 //     {
 //       id: "01",
 //       title: "Stage Awareness",
-//       text: "Every athlete is at a specific stage of development. Before any decision is made, we identify exactly where they are—so the right actions follow.",
+//       text: "Every athlete is at a specific stage of development. Before any decision is made, we identify exactly where they are so the right actions follow.",
 //     },
 //     {
 //       id: "02",
@@ -84,6 +84,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Image from "next/image";
 import { RevealSection } from "@/components/animations/RevealSection";
 import { PremiumCard } from "@/components/ui/PremiumCard";
 import Link from "next/link";
@@ -103,7 +104,7 @@ export function TruePathSystem() {
     {
       id: "01",
       title: "Stage Awareness",
-      text: "Every athlete is at a specific stage of development. Before any decision is made, we identify exactly where they are—so the right actions follow.",
+      text: "Every athlete is at a specific stage of development. Before any decision is made, we identify exactly where they are so the right actions follow.",
     },
     {
       id: "02",
@@ -324,9 +325,11 @@ export function TruePathSystem() {
                         <PremiumCard className="group flex flex-col items-start text-left p-0 overflow-hidden border-white/10 bg-background-light/40 hover:border-accent-lime/30 transition-all duration-500">
                           <div className="w-full h-44 overflow-hidden relative">
                             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
-                            <img
+                            <Image
                               src={`/images/assets/step${i + 1}.png`}
                               alt={step.title}
+                              fill
+                              sizes="(max-width: 1280px) 100vw, 420px"
                               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
                             />
                           </div>
@@ -390,9 +393,11 @@ export function TruePathSystem() {
                         <PremiumCard className="group flex flex-col items-start text-left p-0 overflow-hidden border-white/10 bg-background-light/40 hover:border-accent-lime/30 transition-all duration-500">
                           <div className="w-full h-44 overflow-hidden relative">
                             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
-                            <img
+                            <Image
                               src={`/images/assets/step${i + 1}.png`}
                               alt={step.title}
+                              fill
+                              sizes="(max-width: 1280px) 100vw, 420px"
                               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
                             />
                           </div>
@@ -452,9 +457,11 @@ export function TruePathSystem() {
                   <PremiumCard className="group flex flex-col items-start text-left p-0 overflow-hidden border-white/10 bg-background-light/40 hover:border-accent-lime/30 transition-all duration-500">
                     <div className="w-full h-32 sm:h-40 overflow-hidden relative">
                       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
-                      <img
+                      <Image
                         src={`/images/assets/step${i + 1}.png`}
                         alt={step.title}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 420px"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
                       />
                     </div>

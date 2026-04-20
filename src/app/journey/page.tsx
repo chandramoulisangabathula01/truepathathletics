@@ -31,14 +31,14 @@ export default function JourneyPage() {
 
               <RevealSection delay={0.12}>
                 <h1 className="mt-6 text-[clamp(2.2rem,5.7vw,4.8rem)] font-medium leading-[0.98] tracking-[-0.03em] text-white">
-                  The True Path Journeyâ„¢
+                  The True Path Journey
                 </h1>
               </RevealSection>
 
               <RevealSection delay={0.22}>
                 <p className="mt-7 max-w-[640px] text-[clamp(1rem,1.2vw,1.35rem)] font-normal leading-[1.45] text-white/88">
-                  Every athlete goes through these stages. Most people don't
-                  recognize them â€” until it's too late.
+                  Every athlete goes through these stages. Most people don&apos;t
+                  recognize them until it&apos;s too late.
                 </p>
               </RevealSection>
             </div>
@@ -48,7 +48,7 @@ export default function JourneyPage() {
 
       <VideoUnveil
         title="Watch the Full Journey Explained"
-        text="Every athlete goes through these stages â€” this explains what really happens at each one."
+        text="Every athlete goes through these stages and this explains what really happens at each one."
       />
 
       <JourneyTimeline />
@@ -63,15 +63,15 @@ export default function JourneyPage() {
           <RevealSection>
             <div className="mx-auto mb-12 h-1 w-16 bg-accent-lime" />
             <h2 className="text-3xl md:text-5xl font-serif mb-10 italic text-text-heading leading-snug lg:px-12">
-              "The goal is not to rush through stages. It is to understand
-              them."
+              &ldquo;The goal is not to rush through stages. It is to understand
+              them.&rdquo;
             </h2>
             <div className="space-y-4">
               <p className="text-xl text-text-soft">
                 Most athletes quit in the wrong stage.
               </p>
               <p className="text-2xl font-bold text-accent-lime">
-                We make sure yours doesn't.
+                We make sure yours doesn&apos;t.
               </p>
             </div>
           </RevealSection>

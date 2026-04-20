@@ -1,8 +1,15 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { Camera as Instagram, Play as Youtube, Send as Twitter, Mail, Phone } from "lucide-react";
+
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "For Parents", href: "/for-parents" },
+  { label: "The True Path Journey", href: "/journey" },
+  { label: "How We Guide", href: "/guide" },
+];
 
 export function Footer() {
   return (
@@ -24,7 +31,7 @@ export function Footer() {
               A guidance system for athletes and parents. Built around stages, not shortcuts.
             </p>
             <p className="text-text-main font-serif italic text-lg opacity-80 decoration-accent-lime/40 decoration-wavy underline underline-offset-8">
-              "Talent is not the problem. The path is."
+              &ldquo;Talent is not the problem. The path is.&rdquo;
             </p>
           </div>
 
@@ -32,9 +39,9 @@ export function Footer() {
           <div>
             <h4 className="font-sans font-bold text-xs uppercase tracking-[0.2em] text-accent-lime mb-8">Navigate</h4>
             <ul className="space-y-4">
-              {["Home", "For Parents", "The True Path Journey™", "How We Guide"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-text-soft hover:text-text-main transition-colors text-sm">{item}</Link>
+              {navLinks.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="text-text-soft hover:text-text-main transition-colors text-sm">{item.label}</Link>
                 </li>
               ))}
             </ul>
@@ -54,7 +61,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/contact" className="text-accent-lime text-sm font-bold flex items-center gap-2 hover:gap-3 transition-all mt-4">
-                  Understand Your Athlete's Stage <span>→</span>
+                  Understand Your Athlete&apos;s Stage <span aria-hidden>-&gt;</span>
                 </Link>
               </li>
             </ul>
@@ -75,11 +82,11 @@ export function Footer() {
 
         <div className="pt-10 border-t border-black/[0.05] dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-text-soft text-xs">
-            © 2026 True Path Athletics. All rights reserved.
+            &copy; 2026 True Path Athletics. All rights reserved.
           </p>
           <div className="flex gap-8">
-            <Link href="#" className="text-text-soft hover:text-text-main text-xs transition-colors">Privacy Policy</Link>
-            <Link href="#" className="text-text-soft hover:text-text-main text-xs transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="text-text-soft hover:text-text-main text-xs transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="text-text-soft hover:text-text-main text-xs transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

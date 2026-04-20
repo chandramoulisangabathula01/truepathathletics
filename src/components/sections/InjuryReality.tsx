@@ -35,7 +35,7 @@
 //               Why Some Athletes Stop Because of Injury
 //             </h2>
 //             <p className="text-text-soft max-w-2xl mx-auto">
-//               Injuries don't just happen — they're often the result of missing the right foundation at the right time.
+//               Injuries don&apos;t just happen. They&apos;re often the result of missing
 //             </p>
 //           </RevealSection>
 //         </div>
@@ -55,7 +55,7 @@
 //           <div className="p-8 rounded-2xl border border-accent-lime/20 bg-accent-lime/5 text-center relative group overflow-hidden transition-all hover:bg-accent-lime/10">
 //             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent-lime to-transparent" />
 //             <p className="text-xl md:text-2xl font-serif italic text-white leading-relaxed">
-//               "Injuries are not always bad — they often show where the athlete needs to improve."
+//               "Injuries are not always bad â€” they often show where the athlete needs to improve."
 //             </p>
 //           </div>
 //         </RevealSection>
@@ -262,7 +262,7 @@ export function InjuryReality() {
               Why Some Athletes Stop Because of Injury
             </h2>
             <p className="text-sm sm:text-base text-text-soft max-w-2xl mx-auto leading-relaxed">
-              Injuries don't just happen — they're often the result of missing
+              Injuries don&apos;t just happen. They&apos;re often the result of missing
               the right foundation at the right time.
             </p>
           </RevealSection>
@@ -350,7 +350,7 @@ export function InjuryReality() {
               </div>
               
               <p className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-serif italic text-white leading-tight sm:leading-snug">
-                &quot;Injuries are not always bad — they often show where the athlete
+                &quot;Injuries are not always bad â€” they often show where the athlete
                 needs to improve.&quot;
               </p>
               

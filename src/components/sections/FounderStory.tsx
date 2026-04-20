@@ -72,13 +72,14 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Image from "next/image";
 import { PrecisionReveal } from "@/components/animations/PrecisionReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function FounderStory() {
   const sectionRef = useRef(null);
-  const imageRef = useRef(null);
+  const imageRef = useRef<HTMLDivElement>(null);
   const quoteRef = useRef(null);
   const paragraphsRef = useRef<(HTMLParagraphElement | null)[]>([]);
   const founderRef = useRef(null);
@@ -226,12 +227,18 @@ export function FounderStory() {
               {/* Image Container */}
               <div className="relative h-[40vh] sm:h-[50vh] md:h-[55vh] lg:h-[70vh] max-h-[500px] lg:max-h-[600px] rounded-xl sm:rounded-2xl overflow-hidden group shadow-2xl">
                 <div className="absolute inset-0 overflow-hidden">
-                  <img
+                  <div
                     ref={imageRef}
-                    src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&q=80&w=800"
-                    alt="The Vision"
-                    className="w-full h-[115%] object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-90 transition-all duration-[3s]"
-                  />
+                    className="relative w-full h-[115%]"
+                  >
+                    <Image
+                      src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&q=80&w=800"
+                      alt="The Vision"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 45vw"
+                      className="object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-90 transition-all duration-[3s]"
+                    />
+                  </div>
                 </div>
 
                 {/* Gradient Overlay */}
@@ -245,8 +252,8 @@ export function FounderStory() {
                   <div className="relative">
                     <div className="absolute -left-2 top-0 bottom-0 w-[2px] bg-accent-lime/60 rounded-full" />
                     <p className="text-white font-serif text-sm sm:text-base md:text-lg lg:text-xl italic leading-snug sm:leading-relaxed text-left pl-3">
-                      "Training is the easy part. Knowing what to train, and
-                      when, is where most athletes fail."
+                      &ldquo;Training is the easy part. Knowing what to train, and
+                      when, is where most athletes fail.&rdquo;
                     </p>
                   </div>
                 </div>
@@ -304,9 +311,11 @@ export function FounderStory() {
                 <div className="relative group/avatar flex-shrink-0">
                   <div className="absolute -inset-1 rounded-full border border-accent-lime/20 group-hover/avatar:border-accent-lime/40 transition-colors duration-500" />
                   <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-accent-lime/30 group-hover/avatar:border-accent-lime/60 transition-colors duration-500">
-                    <img
+                    <Image
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200"
                       alt="Founder"
+                      width={48}
+                      height={48}
                       className="w-full h-full object-cover group-hover/avatar:scale-110 transition-transform duration-700"
                     />
                   </div>

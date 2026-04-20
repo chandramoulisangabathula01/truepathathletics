@@ -8,114 +8,114 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+type StageItem = {
+  stage: string;
+  subtitle: string;
+  feeling: string;
+  focus: string;
+  image: string;
+  side: "left" | "right";
+  note?: string;
+};
+
+const stages: StageItem[] = [
+  {
+    stage: "Ignition",
+    subtitle: "The spark that starts everything",
+    feeling: "Excited, curious, free",
+    focus: "Explore freely. Don't specialize yet.",
+    image:
+      "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600&auto=format&fit=crop",
+    side: "left",
+  },
+  {
+    stage: "Awareness",
+    subtitle: "Learning how the game really works",
+    feeling: "Engaged, sometimes overwhelmed",
+    focus: "Build fundamentals. Accept correction.",
+    image:
+      "https://images.unsplash.com/photo-1574629810360-7efbb1925846?q=80&w=1600&auto=format&fit=crop",
+    side: "right",
+  },
+  {
+    stage: "Momentum",
+    subtitle: "Progress starts to feel real",
+    feeling: "Confident, motivated",
+    focus: "Stay consistent. Build habits, not just results.",
+    image:
+      "https://images.unsplash.com/photo-1547347298-4074fc3086f0?q=80&w=1600&auto=format&fit=crop",
+    side: "left",
+  },
+  {
+    stage: "Resistance",
+    subtitle: "The wall every athlete must face",
+    feeling: "Frustrated, stuck, questioning",
+    focus: "Don't quit. This is where growth lives.",
+    note: "This is where most athletes feel stuck — and where many quit.",
+    image:
+      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop",
+    side: "right",
+  },
+  {
+    stage: "Adaptation",
+    subtitle: "The body and mind catch up",
+    feeling: "Tired, but things are resolving",
+    focus: "Trust the process. Recovery is training.",
+    image:
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1600&auto=format&fit=crop",
+    side: "left",
+  },
+  {
+    stage: "Commitment",
+    subtitle: "The decision to go deeper",
+    feeling: "Clear, focused, sometimes isolated",
+    focus: "Own your identity as an athlete.",
+    image:
+      "https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=1600&auto=format&fit=crop",
+    side: "right",
+  },
+  {
+    stage: "Competition",
+    subtitle: "Testing against the best",
+    feeling: "Pressure, nerves, deep focus",
+    focus: "Compete to learn. Results are feedback.",
+    image:
+      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1600&auto=format&fit=crop",
+    side: "left",
+  },
+  {
+    stage: "Breakthrough",
+    subtitle: "Something shifts permanently",
+    feeling: "Surprised, empowered, hungry",
+    focus: "Understand what created it—then repeat.",
+    image:
+      "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600&auto=format&fit=crop",
+    side: "right",
+  },
+  {
+    stage: "Identity",
+    subtitle: "The athlete becomes the role",
+    feeling: "Grounded, purposeful",
+    focus: "Lead from your identity. Your standard sets others'.",
+    image:
+      "https://images.unsplash.com/photo-1502904550040-7534597429ae?q=80&w=1600&auto=format&fit=crop",
+    side: "left",
+  },
+  {
+    stage: "Continuity",
+    subtitle: "The long game is the only game",
+    feeling: "Mature, seasoned, invested",
+    focus: "Give back. Keep growing differently.",
+    image:
+      "https://images.unsplash.com/photo-1526401485004-46910ecc8e51?q=80&w=1600&auto=format&fit=crop",
+    side: "right",
+  },
+];
+
 export function JourneyTimeline() {
   const sectionRef = useRef<HTMLElement>(null);
   const progressPathRef = useRef<SVGPathElement>(null);
   const milestoneRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  type StageItem = {
-    stage: string;
-    subtitle: string;
-    feeling: string;
-    focus: string;
-    image: string;
-    side: "left" | "right";
-    note?: string;
-  };
-
-  const stages: StageItem[] = [
-    {
-      stage: "Ignition",
-      subtitle: "The spark that starts everything",
-      feeling: "Excited, curious, free",
-      focus: "Explore freely. Don't specialize yet.",
-      image:
-        "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600&auto=format&fit=crop",
-      side: "left",
-    },
-    {
-      stage: "Awareness",
-      subtitle: "Learning how the game really works",
-      feeling: "Engaged, sometimes overwhelmed",
-      focus: "Build fundamentals. Accept correction.",
-      image:
-        "https://images.unsplash.com/photo-1574629810360-7efbb1925846?q=80&w=1600&auto=format&fit=crop",
-      side: "right",
-    },
-    {
-      stage: "Momentum",
-      subtitle: "Progress starts to feel real",
-      feeling: "Confident, motivated",
-      focus: "Stay consistent. Build habits, not just results.",
-      image:
-        "https://images.unsplash.com/photo-1547347298-4074fc3086f0?q=80&w=1600&auto=format&fit=crop",
-      side: "left",
-    },
-    {
-      stage: "Resistance",
-      subtitle: "The wall every athlete must face",
-      feeling: "Frustrated, stuck, questioning",
-      focus: "Don't quit. This is where growth lives.",
-      note: "This is where most athletes feel stuck — and where many quit.",
-      image:
-        "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop",
-      side: "right",
-    },
-    {
-      stage: "Adaptation",
-      subtitle: "The body and mind catch up",
-      feeling: "Tired, but things are resolving",
-      focus: "Trust the process. Recovery is training.",
-      image:
-        "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1600&auto=format&fit=crop",
-      side: "left",
-    },
-    {
-      stage: "Commitment",
-      subtitle: "The decision to go deeper",
-      feeling: "Clear, focused, sometimes isolated",
-      focus: "Own your identity as an athlete.",
-      image:
-        "https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=1600&auto=format&fit=crop",
-      side: "right",
-    },
-    {
-      stage: "Competition",
-      subtitle: "Testing against the best",
-      feeling: "Pressure, nerves, deep focus",
-      focus: "Compete to learn. Results are feedback.",
-      image:
-        "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1600&auto=format&fit=crop",
-      side: "left",
-    },
-    {
-      stage: "Breakthrough",
-      subtitle: "Something shifts permanently",
-      feeling: "Surprised, empowered, hungry",
-      focus: "Understand what created it—then repeat.",
-      image:
-        "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600&auto=format&fit=crop",
-      side: "right",
-    },
-    {
-      stage: "Identity",
-      subtitle: "The athlete becomes the role",
-      feeling: "Grounded, purposeful",
-      focus: "Lead from your identity. Your standard sets others'.",
-      image:
-        "https://images.unsplash.com/photo-1502904550040-7534597429ae?q=80&w=1600&auto=format&fit=crop",
-      side: "left",
-    },
-    {
-      stage: "Continuity",
-      subtitle: "The long game is the only game",
-      feeling: "Mature, seasoned, invested",
-      focus: "Give back. Keep growing differently.",
-      image:
-        "https://images.unsplash.com/photo-1526401485004-46910ecc8e51?q=80&w=1600&auto=format&fit=crop",
-      side: "right",
-    },
-  ];
 
   useEffect(() => {
     if (!sectionRef.current || !progressPathRef.current) return;
@@ -325,6 +325,7 @@ export function JourneyTimeline() {
                           src={item.image}
                           alt={item.stage}
                           fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
                           data-stage-image
                           className="object-cover"
                         />

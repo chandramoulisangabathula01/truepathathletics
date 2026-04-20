@@ -15,10 +15,10 @@ export function FinalCTA() {
             Not Sure What Your Athlete Needs Right Now?
           </h2>
           <p className="text-xl text-text-soft mb-12 max-w-2xl mx-auto">
-            Let's figure out where they are and what they should focus on next.
+            Let&apos;s figure out where they are and what they should focus on next.
           </p>
           <button className="btn-premium btn-primary scale-110 w-fit mx-auto">
-            Understand Your Athlete's Stage
+            Understand Your Athlete&apos;s Stage
             <ArrowRight className="w-5 h-5" />
           </button>
         </RevealSection>

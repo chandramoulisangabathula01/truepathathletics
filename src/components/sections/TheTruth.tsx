@@ -20,7 +20,7 @@
 
 //         <RevealSection delay={0.5}>
 //           <p className="text-lg md:text-xl text-text-soft leading-relaxed">
-//             We've worked with hundreds of athletes and families. The ones who thrive aren't the most talented. They're the ones who had <span className="text-accent-lime font-bold">clarity</span>—about where they were, what they needed, and how to keep going.
+//             We've worked with hundreds of athletes and families. The ones who thrive aren't the most talented. They're the ones who had <span className="text-accent-lime font-bold">clarity</span> about where they were, what they needed, and how to keep going.
 //           </p>
 //         </RevealSection>
 //       </div>
@@ -129,10 +129,10 @@ export function TheTruth() {
             className="space-y-4 sm:space-y-6"
           >
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed sm:leading-relaxed md:leading-relaxed font-light">
-              We've worked with hundreds of athletes and families. The ones who
-              thrive aren't the most talented. They're the ones who had{" "}
+              We&apos;ve worked with hundreds of athletes and families. The ones who
+              thrive aren&apos;t the most talented. They&apos;re the ones who had{" "}
               <span className="text-accent-lime font-bold">clarity</span>
-              —about where they were, what they needed, and how to keep going.
+              about where they were, what they needed, and how to keep going.
             </p>
           </div>
         </RevealSection>

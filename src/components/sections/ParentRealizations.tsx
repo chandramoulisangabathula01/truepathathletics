@@ -69,7 +69,7 @@ export function ParentRealizations() {
               <p className="text-text-soft text-sm mb-8 relative z-10">What happens when parents change their approach.</p>
               
               <div className="mt-8 space-y-6 relative z-10">
-                {realizations.map((realization, i) => (
+                {realizations.map((realization) => (
                   <div key={realization} className="flex items-start gap-5 group">
                     <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-lime text-background-deep shadow-[0_0_15px_rgba(132,204,22,0.3)] transition-transform duration-300 group-hover:scale-110">
                       <CheckCircle2 className="w-5 h-5" />

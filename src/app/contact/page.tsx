@@ -8,7 +8,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
-      
+
       <section className="pt-40 pb-32">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -16,13 +16,13 @@ export default function ContactPage() {
             <div className="space-y-12">
               <RevealSection>
                 <span className="text-accent-lime font-bold tracking-[0.2em] text-xs uppercase mb-6 block">
-                  Let's Talk
+                  Let&apos;s Talk
                 </span>
                 <h1 className="text-5xl md:text-7xl font-serif mb-8 leading-tight text-text-main">
                   Book a <br />Consultation
                 </h1>
                 <p className="text-xl text-text-soft leading-relaxed max-w-xl">
-                  Tell us where your athlete is. We'll help identify their stage and build a clear path forward—at no obligation.
+                  Tell us where your athlete is. We&apos;ll help identify their stage and build a clear path forward at no obligation.
                 </p>
               </RevealSection>
 

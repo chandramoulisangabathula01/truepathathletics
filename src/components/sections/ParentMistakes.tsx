@@ -284,6 +284,7 @@ export function ParentMistakes() {
                   src="/images/problem/confused.png"
                   alt="Athlete looking focused and pressured"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover opacity-80 grayscale-[30%] transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-90"
                 />
               </div>

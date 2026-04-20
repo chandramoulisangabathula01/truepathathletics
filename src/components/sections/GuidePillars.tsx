@@ -1,9 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { PrecisionReveal } from "@/components/animations/PrecisionReveal";
-import { PremiumCard } from "@/components/ui/PremiumCard";
 import { Activity, Brain, Shield, HeartHandshake } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const pillars = [
   {
@@ -12,7 +11,7 @@ const pillars = [
     image: "/images/assets/guide_performance.png",
     items: [
       { name: "Tennis Training", desc: "Stage-specific technical and tactical development." },
-      { name: "Match Strategy", desc: "Learn how to think during competition — not just practice." },
+      { name: "Match Strategy", desc: "Learn how to think during competition and not just practice." },
       { name: "Video Analysis", desc: "Film review to accelerate pattern recognition." }
     ]
   },
@@ -22,7 +21,7 @@ const pillars = [
     image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800",
     items: [
       { name: "Stage-Based Planning", desc: "A roadmap aligned to where the athlete actually is right now." },
-      { name: "Mental Guidance", desc: "Confidence and focus built into daily training — not added later." },
+      { name: "Mental Guidance", desc: "Confidence and focus built into daily training and not added later." },
       { name: "Competition Readiness", desc: "Preparing mentally, physically, and tactically for the next level." }
     ]
   },
@@ -41,9 +40,9 @@ const pillars = [
     icon: HeartHandshake,
     image: "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&q=80&w=800",
     items: [
-      { name: "Decision-Making Support", desc: "Help with the hard calls — timing, tournaments, specialization." },
-      { name: "Long-Term Planning", desc: "A 2–4 year roadmap that aligns expectations with reality." },
-      { name: "Communication Guidance", desc: "Frameworks for conversations after hard losses — and with coaches." }
+      { name: "Decision-Making Support", desc: "Help with the hard calls: timing, tournaments, and specialization." },
+      { name: "Long-Term Planning", desc: "A 2 to 4 year roadmap that aligns expectations with reality." },
+      { name: "Communication Guidance", desc: "Frameworks for conversations after hard losses and with coaches." }
     ]
   }
 ];
@@ -58,18 +57,20 @@ export function GuidePillars() {
               <div className="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 hover:border-accent-lime/30 transition-all duration-700">
                 {/* Media Section */}
                 <div className="relative h-64 overflow-hidden">
-                   <img 
-                    src={pillar.image} 
+                  <Image
+                    src={pillar.image}
                     alt={pillar.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-90 group-hover:scale-110 transition-all duration-[3s]"
-                   />
-                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A1F] to-transparent opacity-80" />
-                   <div className="absolute bottom-8 left-8 flex items-center gap-4">
-                      <div className="w-14 h-14 rounded-2xl bg-accent-lime/10 backdrop-blur-md flex items-center justify-center text-accent-lime border border-accent-lime/20">
-                        <pillar.icon className="w-7 h-7" />
-                      </div>
-                      <h3 className="text-3xl font-serif text-white">{pillar.title}</h3>
-                   </div>
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A1F] to-transparent opacity-80" />
+                  <div className="absolute bottom-8 left-8 flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-2xl bg-accent-lime/10 backdrop-blur-md flex items-center justify-center text-accent-lime border border-accent-lime/20">
+                      <pillar.icon className="w-7 h-7" />
+                    </div>
+                    <h3 className="text-3xl font-serif text-white">{pillar.title}</h3>
+                  </div>
                 </div>
 
                 {/* Content Section */}
