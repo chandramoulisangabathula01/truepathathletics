@@ -350,8 +350,7 @@ export function InjuryReality() {
               </div>
               
               <p className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-serif italic text-white leading-tight sm:leading-snug">
-                &quot;Injuries are not always bad â€” they often show where the athlete
-                needs to improve.&quot;
+                &quot;Injuries are not always bad they often show where the athlete needs to improve.&quot;
               </p>
               
               <div className="mt-8 flex items-center gap-4">
