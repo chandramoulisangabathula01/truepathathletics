@@ -238,7 +238,7 @@ export function TruePathSystem() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 sm:py-24 md:py-32 lg:py-40 bg-background-deep overflow-hidden"
+      className="relative overflow-hidden bg-background-deep py-14 sm:py-22 md:py-30 lg:py-40"
     >
       {/* Background */}
       <div className="absolute inset-0 -z-10">
@@ -262,14 +262,14 @@ export function TruePathSystem() {
         className="absolute bottom-1/4 -right-32 w-64 h-64 sm:w-96 sm:h-96 bg-accent-lime/5 blur-[150px] rounded-full pointer-events-none"
       />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 sm:mb-16 md:mb-20 lg:mb-28 gap-6 sm:gap-8 max-w-5xl mx-auto">
+        <div className="mx-auto mb-10 flex max-w-5xl flex-col gap-6 sm:mb-14 sm:gap-8 md:mb-20 md:flex-row md:items-end md:justify-between lg:mb-28">
           <RevealSection>
             <span className="text-accent-lime font-bold tracking-[0.2em] text-xs sm:text-sm uppercase mb-3 sm:mb-4 block">
               The System
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mb-4 sm:mb-6 leading-tight">
+            <h2 className="mb-4 text-[1.9rem] leading-tight font-serif sm:mb-6 sm:text-4xl md:text-5xl">
               A guidance system built{" "}
               <br className="hidden sm:block" />
               around stages, not shortcuts.
@@ -430,7 +430,7 @@ export function TruePathSystem() {
         {/* ========================= */}
         {/* MOBILE / TABLET TIMELINE  */}
         {/* ========================= */}
-        <div className="lg:hidden relative max-w-lg mx-auto">
+        <div className="relative mx-auto max-w-xl lg:hidden">
           {/* Vertical Line */}
           <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-[2px] bg-white/5 z-0">
             <div
@@ -469,10 +469,10 @@ export function TruePathSystem() {
                       <span className="text-4xl sm:text-5xl font-serif text-accent-lime/10 absolute top-1 right-4 font-bold group-hover:text-accent-lime/20 transition-colors duration-500 select-none">
                         {step.id}
                       </span>
-                      <h3 className="text-lg sm:text-xl font-serif mb-2 sm:mb-3 relative z-20 text-text-main group-hover:text-accent-lime transition-colors duration-300">
+                      <h3 className="relative z-20 mb-2 text-lg font-serif text-text-main transition-colors duration-300 group-hover:text-accent-lime sm:mb-3 sm:text-xl">
                         {step.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-text-soft leading-relaxed relative z-20">
+                      <p className="relative z-20 text-sm leading-relaxed text-text-soft">
                         {step.text}
                       </p>
                     </div>

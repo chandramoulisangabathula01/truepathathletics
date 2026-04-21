@@ -144,7 +144,7 @@ export function ConsultationForm() {
             </>
           ) : (
             <>
-              Understand Your Athlete&apos;s Stage
+              Get Athlete Roadmap
               <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
             </>
           )}

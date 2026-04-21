@@ -1,4 +1,4 @@
-
+﻿
 // "use client";
 
 // import { useState, useEffect, useRef } from "react";
@@ -656,7 +656,7 @@ export function InteractiveAssessment() {
                     href="/contact"
                     className="btn-premium btn-primary inline-flex min-w-[210px] px-6 py-3"
                   >
-                    Book a consultation
+                    Book Free Consultation
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>

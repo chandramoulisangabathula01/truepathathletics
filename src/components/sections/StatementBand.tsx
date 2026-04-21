@@ -365,22 +365,22 @@ export function StatementBand() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 border-y border-white/5 bg-background-light/20 overflow-hidden"
+      className="relative overflow-hidden border-y border-white/5 bg-background-light/20 py-14 sm:py-18 md:py-20"
     >
       {/* Ambient background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-accent-lime/[0.03] rounded-full blur-[100px]" />
       </div>
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <div
           ref={quoteWrapperRef}
-          className="relative max-w-4xl mx-auto px-1 md:px-3 py-6"
+          className="relative mx-auto max-w-4xl px-1 py-4 md:px-3 md:py-6"
         >
           {/* ★ FIXED: Invisible structural placeholder — no ghost text visible */}
           <h2
             aria-hidden="true"
-            className="text-2xl md:text-4xl font-serif text-transparent text-center leading-relaxed select-none pointer-events-none"
+            className="pointer-events-none select-none text-center font-serif text-xl leading-relaxed text-transparent sm:text-2xl md:text-4xl"
           >
             Most athletes don&apos;t quit because of talent. They quit because
             they{" "}
@@ -395,7 +395,7 @@ export function StatementBand() {
             className="pointer-events-none absolute inset-0 z-10"
             style={{ clipPath: "inset(0 100% 0 0)", willChange: "clip-path" }}
           >
-            <h2 className="text-2xl md:text-4xl font-serif text-text-main text-center leading-relaxed">
+            <h2 className="text-center font-serif text-xl leading-relaxed text-text-main sm:text-2xl md:text-4xl">
               Most athletes don&apos;t quit because of talent. They quit because
               they{" "}
               <span className="text-accent-lime font-sans font-bold italic drop-shadow-[0_0_20px_rgba(190,255,50,0.3)]">
@@ -408,7 +408,7 @@ export function StatementBand() {
           <div
             ref={trailRef}
             aria-hidden="true"
-            className="pointer-events-none absolute left-0 top-1/2 z-[18] -translate-y-1/2 h-10 w-24 md:h-14 md:w-36 will-change-transform origin-right"
+            className="pointer-events-none absolute left-0 top-1/2 z-[18] h-8 w-20 origin-right -translate-y-1/2 will-change-transform sm:h-10 sm:w-24 md:h-14 md:w-36"
             style={{
               background:
                 "linear-gradient(90deg, transparent 0%, rgba(190, 255, 50, 0.08) 40%, rgba(190, 255, 50, 0.15) 100%)",
@@ -422,7 +422,7 @@ export function StatementBand() {
           <div
             ref={glowRef}
             aria-hidden="true"
-            className="pointer-events-none absolute left-0 top-1/2 z-[19] -translate-y-1/2 h-28 w-28 md:h-40 md:w-40 will-change-transform"
+            className="pointer-events-none absolute left-0 top-1/2 z-[19] h-20 w-20 -translate-y-1/2 will-change-transform sm:h-28 sm:w-28 md:h-40 md:w-40"
             style={{
               background:
                 "radial-gradient(circle, rgba(190, 255, 50, 0.2) 0%, rgba(190, 255, 50, 0.05) 40%, transparent 70%)",
@@ -444,7 +444,7 @@ export function StatementBand() {
           <div
             ref={ballRef}
             aria-hidden="true"
-            className="pointer-events-none absolute left-0 top-1/2 z-20 -translate-y-1/2 h-14 w-14 md:h-32 md:w-32 will-change-transform"
+            className="pointer-events-none absolute left-0 top-1/2 z-20 h-10 w-10 -translate-y-1/2 will-change-transform sm:h-14 sm:w-14 md:h-32 md:w-32"
             style={{ transformOrigin: "center center" }}
           >
             <div className="relative w-full h-full">

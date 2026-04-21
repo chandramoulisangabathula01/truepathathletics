@@ -228,7 +228,7 @@ export function InjuryReality() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 sm:py-24 md:py-28 lg:py-32 overflow-hidden bg-background-deep"
+      className="relative overflow-hidden bg-background-deep py-14 sm:py-24 md:py-28 lg:py-32"
     >
       {/* BG */}
       <div className="absolute inset-0 -z-10">
@@ -278,32 +278,32 @@ export function InjuryReality() {
           {/* Horizontal Line */}
           <div
             data-h-line
-            className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent origin-center z-10 pointer-events-none"
+            className="pointer-events-none absolute left-0 right-0 top-1/2 z-10 hidden h-px origin-center -translate-y-1/2 bg-gradient-to-r from-transparent via-red-500/30 to-transparent sm:block"
           />
 
           {/* Vertical Line */}
           <div
             data-v-line
-            className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-red-500/30 to-transparent origin-center z-10 pointer-events-none"
+            className="pointer-events-none absolute bottom-0 left-1/2 top-0 z-10 hidden w-px origin-center -translate-x-1/2 bg-gradient-to-b from-transparent via-red-500/30 to-transparent sm:block"
           />
 
           {/* Center Node */}
           <div
             data-center
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
+            className="pointer-events-none absolute left-1/2 top-1/2 z-20 hidden -translate-x-1/2 -translate-y-1/2 sm:block"
           >
             <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-red-500/60 shadow-[0_0_20px_rgba(239,68,68,0.4)]" />
           </div>
 
           {/* 2x2 Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
+          <div className="grid grid-cols-1 gap-0 sm:grid-cols-2">
             {points.map((point, i) => (
               <div
                 key={i}
                 ref={(el) => {
                   itemsRef.current[i] = el;
                 }}
-                className={`group p-6 sm:p-8 lg:p-10 ${
+                className={`group border-b border-red-500/[0.08] p-6 last:border-b-0 sm:border-b-0 sm:p-8 lg:p-10 ${
                   i === 0
                     ? "sm:border-r sm:border-b border-red-500/[0.08]"
                     : i === 1

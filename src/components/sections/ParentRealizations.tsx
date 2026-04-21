@@ -17,7 +17,7 @@ export function ParentRealizations() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-background-deep py-20 sm:py-28 md:py-32 lg:py-36">
+    <section className="relative overflow-hidden bg-background-deep py-14 sm:py-16 md:py-20 lg:py-24">
       {/* Ambient Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background-deep via-background-deep/96 to-background-deep" />
@@ -25,9 +25,9 @@ export function ParentRealizations() {
       </div>
 
       <div className="container relative z-10 mx-auto px-6">
-        <div className="mx-auto mb-16 max-w-4xl text-center md:mb-20">
+        <div className="mx-auto mb-10 max-w-4xl text-center md:mb-14">
           <RevealSection>
-            <span className="text-accent-lime font-bold tracking-[0.2em] text-xs uppercase mb-4 block inline-flex px-4 py-1.5 rounded-full border border-accent-lime/20 bg-accent-lime/5 backdrop-blur-md">
+            <span className="mb-4 inline-flex rounded-full border border-accent-lime/30 bg-accent-lime/12 px-5 py-2 text-sm font-bold uppercase tracking-[0.14em] text-accent-lime shadow-[0_8px_20px_-14px_rgba(var(--accent-primary-rgb),0.55)] backdrop-blur-md">
               What Parents Start Realizing
             </span>
             <SplitText
@@ -37,7 +37,7 @@ export function ParentRealizations() {
           </RevealSection>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 max-w-7xl mx-auto">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 lg:grid-cols-[1.15fr_0.85fr] lg:gap-6">
           {/* Left Column: Quotes with Glassmorphism */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {parentQuotes.map((quote, i) => (

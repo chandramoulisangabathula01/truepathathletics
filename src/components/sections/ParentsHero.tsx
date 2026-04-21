@@ -26,7 +26,7 @@ export function ParentsHero() {
         <div className="relative z-10 min-h-[560px] px-6 py-12 sm:px-10 lg:min-h-[640px] lg:px-[74px] lg:py-[72px]">
           <div className="max-w-[900px] lg:pt-4">
             <RevealSection>
-              <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-white/95 backdrop-blur-sm">
+              <span className="inline-flex items-center rounded-full border border-white/30 bg-white/14 px-5 py-2 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-[0_8px_20px_-14px_rgba(255,255,255,0.45)] backdrop-blur-sm">
                 For Parents
               </span>
             </RevealSection>

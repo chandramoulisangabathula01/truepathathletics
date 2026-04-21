@@ -5,7 +5,9 @@ import { StatementBand } from "@/components/sections/StatementBand";
 import { TheProblem } from "@/components/sections/TheProblem";
 import { TheTruth } from "@/components/sections/TheTruth";
 import { TruePathSystem } from "@/components/sections/TruePathSystem";
+import { HowItWorks } from "@/components/sections/HowItWorks";
 import { FounderStory } from "@/components/sections/FounderStory";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { InjuryReality } from "@/components/sections/InjuryReality";
 import { VideoUnveil } from "@/components/sections/VideoUnveil";
 import { InteractiveAssessment } from "@/components/sections/InteractiveAssessment";
@@ -20,7 +22,9 @@ export default function Home() {
       <TheProblem />
       <TheTruth />
       <TruePathSystem />
+      <HowItWorks />
       <FounderStory />
+      <TestimonialsSection />
       <InjuryReality />
       <VideoUnveil />
       <InteractiveAssessment />

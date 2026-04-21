@@ -188,6 +188,12 @@ body {
   position: relative;
 }
 
+@media (max-width: 767px) {
+  body {
+    padding-bottom: calc(92px + env(safe-area-inset-bottom));
+  }
+}
+
 body::after {
   content: "";
   position: fixed;

@@ -113,6 +113,7 @@ interface VideoUnveilProps {
   text?: string;
   supportingLine?: string;
   posterUrl?: string;
+  videoUrl?: string;
 }
 
 export function VideoUnveil({
@@ -120,6 +121,7 @@ export function VideoUnveil({
   text = "This explains why most athletes struggle — and how we guide them differently.",
   supportingLine = "Built from real coaching experience with developing athletes.",
   posterUrl = "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80",
+  videoUrl = "/video/landing/True_Path_Athletics.mp4",
 }: VideoUnveilProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLDivElement>(null);
@@ -151,33 +153,48 @@ export function VideoUnveil({
   useEffect(() => {
     if (!videoRef.current || !containerRef.current) return;
 
+    const mm = gsap.matchMedia();
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        videoRef.current,
-        {
-          width: "50%",
-          scale: 0.85,
-          borderRadius: "48px",
-          opacity: 0.7,
-        },
-        {
-          width: "70%",
+      mm.add("(max-width: 767px)", () => {
+        gsap.set(videoRef.current, {
+          width: "100%",
           scale: 1,
-          borderRadius: "16px",
+          borderRadius: "14px",
           opacity: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-            end: "top 10%",
-            scrub: 1.2,
-            pin: false,
+        });
+      });
+
+      mm.add("(min-width: 768px)", () => {
+        gsap.fromTo(
+          videoRef.current,
+          {
+            width: "86%",
+            scale: 0.92,
+            borderRadius: "36px",
+            opacity: 0.82,
           },
-        }
-      );
+          {
+            width: "70%",
+            scale: 1,
+            borderRadius: "16px",
+            opacity: 1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top 80%",
+              end: "top 10%",
+              scrub: 1.2,
+              pin: false,
+            },
+          }
+        );
+      });
     }, containerRef);
 
-    return () => ctx.revert();
+    return () => {
+      mm.revert();
+      ctx.revert();
+    };
   }, []);
 
   return (
@@ -200,13 +217,14 @@ export function VideoUnveil({
         <div
           ref={videoRef}
           onClick={togglePlay}
-          className="w-[70%] aspect-video relative overflow-hidden bg-background-light shadow-2xl border border-white/10 group cursor-pointer"
+          aria-label={`${title}. ${supportingLine}`}
+          className="relative aspect-video w-full cursor-pointer overflow-hidden border border-white/10 bg-background-light shadow-2xl group sm:w-[88%] lg:w-[70%]"
           style={{ borderRadius: "16px" }}
         >
           {/* Video Element */}
           <video
             ref={videoElementRef}
-            src="/video/landing/True_Path_Athletics.mp4"
+            src={videoUrl}
             className="absolute inset-0 w-full h-full object-cover"
             playsInline
             loop
@@ -230,7 +248,11 @@ export function VideoUnveil({
           {/* Mute/Unmute Toggle - Positioned on side as requested */}
           <button
             onClick={toggleMute}
-            className="absolute top-4 right-4 z-30 p-2.5 rounded-full bg-background-deep/60 backdrop-blur-md border border-white/10 text-white hover:bg-accent-lime hover:text-white transition-all duration-300 shadow-lg"
+            className={`absolute top-4 right-4 z-30 p-2.5 rounded-full backdrop-blur-md border border-white/10 text-white transition-all duration-300 shadow-lg ${
+              isMuted 
+                ? "bg-accent-lime/90 hover:bg-accent-lime" 
+                : "bg-background-deep/60 hover:bg-accent-lime"
+            }`}
             aria-label={isMuted ? "Unmute" : "Mute"}
           >
             {isMuted ? (
@@ -250,17 +272,7 @@ export function VideoUnveil({
             </div>
           )}
 
-          {/* Bottom Info - Fades out while playing to keep focus on video */}
-          <div className={`absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 md:bottom-8 md:left-8 md:right-8 flex justify-between items-end transition-opacity duration-500 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
-            <div className="text-left bg-background-deep/20 backdrop-blur-[2px] p-2 rounded-lg">
-              <p className="text-white font-serif text-sm sm:text-base md:text-lg lg:text-xl mb-0.5 sm:mb-1">
-                {title}
-              </p>
-              <p className="text-white/60 text-[10px] sm:text-xs md:text-sm">
-                {supportingLine}
-              </p>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>

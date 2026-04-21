@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -9,6 +9,7 @@ const navLinks = [
   { label: "For Parents", href: "/for-parents" },
   { label: "The True Path Journey", href: "/journey" },
   { label: "How We Guide", href: "/guide" },
+  { label: "Founder", href: "/founder" },
 ];
 
 export function Footer() {
@@ -61,7 +62,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/contact" className="text-accent-lime text-sm font-bold flex items-center gap-2 hover:gap-3 transition-all mt-4">
-                  Understand Your Athlete&apos;s Stage <span aria-hidden>-&gt;</span>
+                  Schedule a Call <span aria-hidden>-&gt;</span>
                 </Link>
               </li>
             </ul>

@@ -967,7 +967,7 @@ const ProblemCard = ({
         delay: index * 0.05,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className={`grid items-center gap-10 lg:gap-16 ${
+      className={`grid items-center gap-6 sm:gap-8 lg:gap-16 ${
         isLeft ? "lg:grid-cols-[1.05fr_1fr]" : "lg:grid-cols-[1fr_1.05fr]"
       }`}
     >
@@ -986,7 +986,7 @@ const ProblemCard = ({
           <motion.img
             src={problem.image}
             alt={problem.title}
-            className="h-[280px] w-full object-cover sm:h-[360px] lg:h-[400px]"
+            className="h-[220px] w-full object-cover sm:h-[320px] lg:h-[400px]"
             onError={(e) => {
               e.currentTarget.src =
                 "https://images.unsplash.com/photo-1461896836934-ber40692d67f?auto=format&fit=crop&q=80&w=1200";
@@ -1012,7 +1012,7 @@ const ProblemCard = ({
         } text-center lg:text-left`}
       >
         <motion.div
-          className="mb-5 flex items-center justify-center gap-4 lg:justify-start"
+          className="mb-4 flex items-center justify-center gap-4 lg:mb-5 lg:justify-start"
           initial={{ opacity: 0, x: -12 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.55, delay: 0.15 }}
@@ -1024,7 +1024,7 @@ const ProblemCard = ({
         </motion.div>
 
         <motion.h3
-          className="max-w-xl text-[2rem] font-bold leading-[1.08] text-text-heading sm:text-[2.5rem] lg:text-[3rem]"
+          className="max-w-xl text-[1.75rem] font-bold leading-[1.08] text-text-heading sm:text-[2.25rem] lg:text-[3rem]"
           initial={{ opacity: 0, y: 18 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
@@ -1033,7 +1033,7 @@ const ProblemCard = ({
         </motion.h3>
 
         <motion.p
-          className="mt-5 max-w-xl text-base leading-8 text-text-muted sm:text-lg lg:text-[1.2rem] lg:leading-9"
+          className="mt-4 max-w-xl text-[0.98rem] leading-7 text-text-muted sm:mt-5 sm:text-lg sm:leading-8 lg:text-[1.2rem] lg:leading-9"
           initial={{ opacity: 0, y: 18 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.3 }}
@@ -1073,13 +1073,13 @@ export function TheProblem() {
         />
       </div>
 
-      <div className="container relative mx-auto px-5 py-18 sm:px-6 sm:py-22 lg:py-28">
+      <div className="container relative mx-auto px-4 py-14 sm:px-6 sm:py-18 lg:py-24">
         <motion.div
           ref={headerRef}
           initial={{ opacity: 0, y: 24 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto mb-14 max-w-3xl text-center sm:mb-16 lg:mb-20"
+          className="mx-auto mb-12 max-w-3xl text-center sm:mb-16 lg:mb-20"
         >
           <motion.span
             className="inline-block text-xs font-bold uppercase tracking-[0.28em] text-accent-lime/90 sm:text-sm"
@@ -1091,7 +1091,7 @@ export function TheProblem() {
           </motion.span>
 
           <motion.h2
-            className="mt-4 text-4xl font-bold leading-[1.02] text-text-heading sm:text-5xl lg:text-6xl"
+            className="mt-3 text-3xl font-bold leading-[1.04] text-text-heading sm:mt-4 sm:text-5xl lg:text-6xl"
             initial={{ opacity: 0, y: 18 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.75, delay: 0.1 }}

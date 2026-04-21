@@ -135,7 +135,7 @@ export function ParentDifferentiation() {
         {/* Header */}
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-14 lg:mb-16">
           <RevealSection>
-            <span className="mb-3 block text-[11px] font-semibold uppercase tracking-[0.24em] text-accent-lime/90">
+            <span className="mb-4 inline-flex items-center rounded-full border border-accent-lime/30 bg-accent-lime/12 px-5 py-2 text-sm font-bold uppercase tracking-[0.14em] text-accent-lime shadow-[0_8px_20px_-14px_rgba(var(--accent-primary-rgb),0.55)]">
               The Difference
             </span>
 

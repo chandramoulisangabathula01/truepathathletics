@@ -135,8 +135,8 @@ export function JourneyTimeline() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 78%",
-          end: "bottom 72%",
-          scrub: 1.15,
+          end: "bottom 20%",
+          scrub: 2.5,
         },
       });
 
@@ -222,52 +222,55 @@ export function JourneyTimeline() {
               <path
                 d="M 360 120
                    C 570 70, 760 180, 980 240
-                   C 1160 288, 1170 445, 1000 545
-                   C 850 632, 610 590, 500 705
-                   C 392 818, 445 980, 655 1045
-                   C 868 1112, 1090 1088, 1125 1250
-                   C 1150 1366, 996 1420, 780 1400
-                   C 575 1382, 428 1460, 430 1590
-                   C 432 1722, 610 1785, 815 1800
-                   C 1000 1812, 1115 1875, 1050 2000
-                   C 990 2115, 810 2132, 640 2080"
+                   S 1170 445, 1000 545
+                   S 610 590, 500 705
+                   S 445 980, 655 1045
+                   S 1090 1088, 1125 1250
+                   S 996 1420, 780 1400
+                   S 428 1460, 430 1590
+                   S 610 1785, 815 1800
+                   S 1115 1875, 1050 2000
+                   S 810 2132, 640 2080"
                 stroke="rgba(var(--accent-primary-rgb),0.10)"
                 strokeWidth="90"
                 strokeLinecap="round"
+                strokeLinejoin="round"
               />
 
               <path
                 d="M 360 120
                    C 570 70, 760 180, 980 240
-                   C 1160 288, 1170 445, 1000 545
-                   C 850 632, 610 590, 500 705
-                   C 392 818, 445 980, 655 1045
-                   C 868 1112, 1090 1088, 1125 1250
-                   C 1150 1366, 996 1420, 780 1400
-                   C 575 1382, 428 1460, 430 1590
-                   C 432 1722, 610 1785, 815 1800
-                   C 1000 1812, 1115 1875, 1050 2000
-                   C 990 2115, 810 2132, 640 2080"
+                   S 1170 445, 1000 545
+                   S 610 590, 500 705
+                   S 445 980, 655 1045
+                   S 1090 1088, 1125 1250
+                   S 996 1420, 780 1400
+                   S 428 1460, 430 1590
+                   S 610 1785, 815 1800
+                   S 1115 1875, 1050 2000
+                   S 810 2132, 640 2080"
                 stroke="rgba(var(--accent-primary-rgb),0.24)"
                 strokeWidth="30"
                 strokeLinecap="round"
+                strokeLinejoin="round"
               />
 
               <path
                 d="M 360 120
                    C 570 70, 760 180, 980 240
-                   C 1160 288, 1170 445, 1000 545
-                   C 850 632, 610 590, 500 705
-                   C 392 818, 445 980, 655 1045
-                   C 868 1112, 1090 1088, 1125 1250
-                   C 1150 1366, 996 1420, 780 1400
-                   C 575 1382, 428 1460, 430 1590
-                   C 432 1722, 610 1785, 815 1800
-                   C 1000 1812, 1115 1875, 1050 2000
-                   C 990 2115, 810 2132, 640 2080"
+                   S 1170 445, 1000 545
+                   S 610 590, 500 705
+                   S 445 980, 655 1045
+                   S 1090 1088, 1125 1250
+                   S 996 1420, 780 1400
+                   S 428 1460, 430 1590
+                   S 610 1785, 815 1800
+                   S 1115 1875, 1050 2000
+                   S 810 2132, 640 2080"
                 stroke="rgba(255,255,255,0.28)"
                 strokeWidth="2.5"
                 strokeLinecap="round"
+                strokeLinejoin="round"
                 strokeDasharray="10 14"
               />
 
@@ -275,18 +278,19 @@ export function JourneyTimeline() {
                 ref={progressPathRef}
                 d="M 360 120
                    C 570 70, 760 180, 980 240
-                   C 1160 288, 1170 445, 1000 545
-                   C 850 632, 610 590, 500 705
-                   C 392 818, 445 980, 655 1045
-                   C 868 1112, 1090 1088, 1125 1250
-                   C 1150 1366, 996 1420, 780 1400
-                   C 575 1382, 428 1460, 430 1590
-                   C 432 1722, 610 1785, 815 1800
-                   C 1000 1812, 1115 1875, 1050 2000
-                   C 990 2115, 810 2132, 640 2080"
+                   S 1170 445, 1000 545
+                   S 610 590, 500 705
+                   S 445 980, 655 1045
+                   S 1090 1088, 1125 1250
+                   S 996 1420, 780 1400
+                   S 428 1460, 430 1590
+                   S 610 1785, 815 1800
+                   S 1115 1875, 1050 2000
+                   S 810 2132, 640 2080"
                 stroke="rgba(var(--accent-primary-rgb),0.85)"
                 strokeWidth="6"
                 strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>
@@ -317,39 +321,44 @@ export function JourneyTimeline() {
                     }`}
                   />
 
-                  <article className="group overflow-hidden rounded-[30px] border border-black/5 bg-surface shadow-brand-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-brand-md dark:border-white/10 dark:bg-surface-alt">
-                    <div className="grid min-h-[320px] grid-cols-1 lg:grid-cols-[1.05fr_1fr]">
+                  <article className="group relative overflow-hidden rounded-[32px] border border-accent-lime/20 bg-surface/40 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-500 hover:-translate-y-2 hover:border-accent-lime/60 hover:bg-surface/60 hover:shadow-[0_0_40px_rgba(var(--accent-primary-rgb),0.2)]">
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent-lime/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                    
+                    <div className="grid min-h-[360px] grid-cols-1 lg:grid-cols-[1fr_1fr] relative z-10">
+                      
                       {/* image */}
-                      <div className="relative min-h-[240px] overflow-hidden lg:min-h-full">
+                      <div className={`relative min-h-[260px] lg:min-h-full overflow-hidden ${isLeft ? 'lg:order-2' : 'lg:order-1'}`}>
                         <Image
                           src={item.image}
                           alt={item.stage}
                           fill
                           sizes="(max-width: 1024px) 100vw, 50vw"
                           data-stage-image
-                          className="object-cover"
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/10 to-black/40" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background-deep via-transparent to-transparent opacity-60" />
 
-                        <div className="absolute left-5 top-5 rounded-full border border-white/15 bg-black/30 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md">
+                        <div className="absolute right-6 top-6 rounded-full border border-accent-lime/30 bg-background-deep/60 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-accent-lime backdrop-blur-md">
                           Stage {(i + 1).toString().padStart(2, "0")}
-                        </div>
-
-                        <div className="absolute inset-x-5 bottom-5">
-                          <h3 className="text-2xl font-serif leading-tight text-white sm:text-[1.9rem]">
-                            {item.stage}
-                          </h3>
-                          <p className="mt-2 max-w-md text-sm leading-6 text-white/88 sm:text-base">
-                            {item.subtitle}
-                          </p>
                         </div>
                       </div>
 
                       {/* content */}
-                      <div className="flex flex-col justify-center p-6 sm:p-7 lg:p-8">
-                        <div className="grid gap-5">
+                      <div className={`flex flex-col justify-center p-7 sm:p-9 lg:p-10 ${isLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+                        <div className="grid gap-6">
                           <div>
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
+                            <h3 className="text-[1.6rem] font-serif leading-tight text-text-heading sm:text-[2rem]">
+                              {item.stage}
+                            </h3>
+                            <p className="mt-2 text-sm leading-6 text-text-soft sm:text-base">
+                              {item.subtitle}
+                            </p>
+                          </div>
+
+                          <div className="h-px w-full bg-gradient-to-r from-accent-lime/25 to-transparent" />
+
+                          <div>
+                            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent-lime/80">
                               What they feel
                             </p>
                             <p className="mt-2 text-base leading-7 text-text-main sm:text-lg">
@@ -357,10 +366,10 @@ export function JourneyTimeline() {
                             </p>
                           </div>
 
-                          <div className="h-px w-full bg-gradient-to-r from-accent-lime/25 to-transparent" />
+                          <div className="h-px w-full bg-gradient-to-r from-accent-lime/20 to-transparent" />
 
                           <div>
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
+                            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-muted">
                               Focus on
                             </p>
                             <p className="mt-2 text-sm leading-7 text-text-soft sm:text-base">
@@ -371,8 +380,8 @@ export function JourneyTimeline() {
                           {item.note && (
                             <>
                               <div className="h-px w-full bg-gradient-to-r from-accent-warm/30 to-transparent" />
-                              <div className="rounded-2xl bg-accent-warm/[0.08] px-4 py-3">
-                                <p className="text-sm leading-6 text-text-main">
+                              <div className="rounded-2xl border border-accent-warm/10 bg-accent-warm/[0.05] shadow-inner px-5 py-4">
+                                <p className="text-sm font-medium leading-6 text-text-main">
                                   {item.note}
                                 </p>
                               </div>

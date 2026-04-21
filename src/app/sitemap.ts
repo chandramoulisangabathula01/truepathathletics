@@ -9,6 +9,7 @@ const routes = [
   "/for-parents",
   "/journey",
   "/guide",
+  "/founder",
   "/contact",
   "/privacy",
   "/terms",

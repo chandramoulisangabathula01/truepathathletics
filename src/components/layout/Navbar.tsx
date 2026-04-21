@@ -1,4 +1,4 @@
-// "use client";
+﻿// "use client";
 
 // import { useEffect, useRef, useState } from "react";
 // import Link from "next/link";
@@ -318,6 +318,7 @@ const NAV_LINKS = [
   { name: "For Parents", href: "/for-parents" },
   { name: "The Journey", href: "/journey" },
   { name: "How We Guide", href: "/guide" },
+  { name: "Founder", href: "/founder" },
   { name: "Contact", href: "/contact" },
 ] as const;
 
@@ -570,7 +571,7 @@ export function Navbar() {
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[0.06] to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
               <span className="relative flex items-center gap-2">
-                Understand Your Athlete Stage
+                Book Free Consultation
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
               </span>
             </Link>
@@ -682,7 +683,7 @@ export function Navbar() {
               className="btn-premium btn-primary group relative w-full justify-center overflow-hidden rounded-xl py-3.5"
             >
               <span className="relative flex items-center gap-2 text-sm">
-                Understand Your Athlete Stage
+                Schedule a Call
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
               </span>
             </Link>

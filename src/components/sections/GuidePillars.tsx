@@ -49,14 +49,14 @@ const pillars = [
 
 export function GuidePillars() {
   return (
-    <section className="py-40 bg-[#0A0A1F]">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <section className="bg-[#0A0A1F] py-14 sm:py-16 lg:py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
           {pillars.map((pillar, i) => (
             <PrecisionReveal key={pillar.title} delay={i * 0.1} direction={i % 2 === 0 ? "left" : "right"}>
               <div className="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 hover:border-accent-lime/30 transition-all duration-700">
                 {/* Media Section */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-56 overflow-hidden sm:h-60 lg:h-64">
                   <Image
                     src={pillar.image}
                     alt={pillar.title}
@@ -65,16 +65,16 @@ export function GuidePillars() {
                     className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-90 group-hover:scale-110 transition-all duration-[3s]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A1F] to-transparent opacity-80" />
-                  <div className="absolute bottom-8 left-8 flex items-center gap-4">
+                  <div className="absolute bottom-5 left-5 flex items-center gap-3 sm:bottom-8 sm:left-8 sm:gap-4">
                     <div className="w-14 h-14 rounded-2xl bg-accent-lime/10 backdrop-blur-md flex items-center justify-center text-accent-lime border border-accent-lime/20">
                       <pillar.icon className="w-7 h-7" />
                     </div>
-                    <h3 className="text-3xl font-serif text-white">{pillar.title}</h3>
+                    <h3 className="text-2xl font-serif text-white sm:text-3xl">{pillar.title}</h3>
                   </div>
                 </div>
 
                 {/* Content Section */}
-                <div className="p-10 space-y-8">
+                <div className="space-y-6 p-6 sm:space-y-8 sm:p-8 lg:p-10">
                   {pillar.items.map((item) => (
                     <div key={item.name} className="relative pl-6 border-l border-white/10 group/item">
                       <div className="absolute left-[-1px] top-1.5 w-[2px] h-3 bg-accent-lime opacity-0 group-hover/item:opacity-100 transition-opacity" />

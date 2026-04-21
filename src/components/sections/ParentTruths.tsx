@@ -23,15 +23,15 @@ export function ParentTruths() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-background-deep py-20 sm:py-28 lg:py-32">
+    <section className="relative overflow-hidden bg-background-deep py-14 sm:py-16 lg:py-20">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-0 h-[400px] w-[500px] -translate-x-1/2 rounded-full bg-accent-lime/[0.04] blur-[140px]" />
+        <div className="absolute left-1/2 top-0 h-[320px] w-[420px] -translate-x-1/2 rounded-full bg-accent-lime/[0.04] blur-[120px]" />
       </div>
 
       <div className="container relative z-10 mx-auto px-6">
-        <div className="mx-auto mb-16 max-w-3xl text-center sm:mb-24">
+        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
           <RevealSection>
-            <span className="text-accent-lime font-bold tracking-[0.2em] text-xs uppercase mb-4 block">
+            <span className="mb-4 inline-flex items-center rounded-full border border-accent-lime/30 bg-accent-lime/12 px-5 py-2 text-sm font-bold uppercase tracking-[0.14em] text-accent-lime shadow-[0_8px_20px_-14px_rgba(var(--accent-primary-rgb),0.55)]">
               What Every Parent Must Understand
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.03] text-accent-lime">
@@ -44,7 +44,7 @@ export function ParentTruths() {
           </RevealSection>
         </div>
 
-        <div className="flex flex-col gap-16 md:gap-24 lg:gap-32 max-w-6xl mx-auto">
+        <div className="mx-auto flex max-w-6xl flex-col gap-10 md:gap-14 lg:gap-16">
           {truths.map((truth, i) => {
             const isEven = i % 2 === 1;
             return (

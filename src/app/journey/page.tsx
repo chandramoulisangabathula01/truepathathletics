@@ -53,9 +53,14 @@ export default function JourneyPage() {
 
       <JourneyTimeline />
 
-      <section className="relative overflow-hidden bg-background py-20 sm:py-24 lg:py-28">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-1/2 h-[360px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-lime/12 blur-[130px]" />
+      <section className="relative overflow-hidden bg-background py-16 sm:py-20 lg:py-24">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[url('/images/assets/hero_cinematic.png')] bg-cover bg-center bg-fixed opacity-30 grayscale" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background" />
+        </div>
+
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <div className="absolute left-1/2 top-1/2 h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-lime/10 blur-[150px]" />
           <div className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-gradient-to-r from-transparent via-accent-secondary/35 to-transparent" />
         </div>
 

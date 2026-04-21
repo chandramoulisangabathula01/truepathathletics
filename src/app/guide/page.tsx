@@ -11,7 +11,7 @@ export default function GuidePage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 overflow-hidden">
+      <section className="relative overflow-hidden pt-26 pb-12 sm:pt-30 sm:pb-14 lg:pt-34 lg:pb-16">
         <div className="absolute inset-0 bg-gradient-to-b from-accent-lime/5 via-transparent to-transparent opacity-50" />
         <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
           <RevealSection>
@@ -29,8 +29,8 @@ export default function GuidePage() {
       </section>
 
       {/* Video Section Wrapper */}
-      <section className="py-20 bg-black/[0.02] dark:bg-white/[0.02]">
-        <div className="container mx-auto px-6 mb-16 text-center">
+      <section className="bg-black/[0.02] py-14 dark:bg-white/[0.02] sm:py-16 lg:py-20">
+        <div className="container mx-auto mb-10 px-6 text-center sm:mb-12 lg:mb-14">
           <RevealSection>
             <h2 className="text-4xl font-serif mb-4">How We Actually Guide Athletes</h2>
             <p className="text-text-soft max-w-2xl mx-auto">A walkthrough of the approach and what we look at, how we make decisions, and why stage-based guidance works.</p>
@@ -44,7 +44,7 @@ export default function GuidePage() {
       </section>
 
       {/* Core Statement */}
-      <section className="py-32 bg-background border-y border-black/[0.05] dark:border-white/5">
+      <section className="border-y border-black/[0.05] bg-background py-16 dark:border-white/5 sm:py-18 lg:py-22">
         <div className="container mx-auto px-6 text-center max-w-4xl">
           <RevealSection>
             <h2 className="text-3xl md:text-5xl font-serif text-text-main leading-snug">

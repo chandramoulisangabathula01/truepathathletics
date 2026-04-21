@@ -83,7 +83,7 @@ export function TheTruth() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full py-16 sm:py-24 md:py-32 lg:py-40 overflow-hidden"
+      className="relative w-full overflow-hidden py-14 sm:py-22 md:py-30 lg:py-40"
     >
       {/* Background Container - Image + Overlay move together */}
       <div
@@ -96,7 +96,6 @@ export function TheTruth() {
           style={{
             backgroundImage:
               "url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2000&auto=format&fit=crop')",
-            backgroundAttachment: "fixed",
           }}
         />
         {/* Dark Overlay - Same speed as image */}
@@ -104,21 +103,21 @@ export function TheTruth() {
       </div>
 
       {/* Content Container */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-2xl sm:max-w-3xl lg:max-w-4xl">
+      <div className="container mx-auto max-w-2xl px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-4xl lg:px-8">
         {/* Badge */}
         <RevealSection>
-          <div data-animate className="mb-6 sm:mb-8 md:mb-10">
-            <span className="inline-block text-accent-lime font-bold tracking-[0.2em] text-xs sm:text-sm uppercase px-4 py-2 border border-accent-lime/30 rounded-full bg-accent-lime/5 hover:bg-accent-lime/10 transition-colors duration-300">
+          <div data-animate className="mb-5 sm:mb-8 md:mb-10">
+            <span className="inline-block rounded-full border border-accent-lime/30 bg-accent-lime/5 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-accent-lime transition-colors duration-300 hover:bg-accent-lime/10 sm:px-4 sm:py-2 sm:text-sm">
               The Truth
             </span>
           </div>
         </RevealSection>
 
         {/* Main Quote */}
-        <div data-animate className="mb-8 sm:mb-12 md:mb-16">
+        <div data-animate className="mb-7 sm:mb-12 md:mb-16">
           <SplitText
             text="&quot;Talent is not the problem. The path is.&quot;"
-            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-serif text-white leading-tight sm:leading-snug md:leading-tight"
+            className="text-[1.85rem] leading-tight font-serif text-white sm:text-3xl sm:leading-snug md:text-5xl md:leading-tight lg:text-6xl"
           />
         </div>
 
@@ -126,9 +125,9 @@ export function TheTruth() {
         <RevealSection delay={0.5}>
           <div
             data-animate
-            className="space-y-4 sm:space-y-6"
+            className="space-y-3 sm:space-y-6"
           >
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed sm:leading-relaxed md:leading-relaxed font-light">
+            <p className="text-[0.98rem] font-light leading-relaxed text-gray-100 sm:text-lg md:text-xl lg:text-2xl">
               We&apos;ve worked with hundreds of athletes and families. The ones who
               thrive aren&apos;t the most talented. They&apos;re the ones who had{" "}
               <span className="text-accent-lime font-bold">clarity</span>
