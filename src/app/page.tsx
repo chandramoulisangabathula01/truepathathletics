@@ -7,9 +7,9 @@ import { TheProblem } from "@/components/sections/TheProblem";
 import { InjuryReality } from "@/components/sections/InjuryReality";
 import { TheTruth } from "@/components/sections/TheTruth";
 import { TruePathSystem } from "@/components/sections/TruePathSystem";
-import { HowItWorks } from "@/components/sections/HowItWorks";
+// import { HowItWorks } from "@/components/sections/HowItWorks";
 import { InteractiveAssessment } from "@/components/sections/InteractiveAssessment";
-import { FounderStory } from "@/components/sections/FounderStory";
+// import { FounderStory } from "@/components/sections/FounderStory";
 // import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
@@ -19,14 +19,14 @@ export default function Home() {
       <Navbar />
       <Hero />
       <StatementBand />
-      <VideoUnveil />
       <TheProblem />
       <InjuryReality />
       <TheTruth />
       <TruePathSystem />
-      <HowItWorks />
+      {/* <HowItWorks /> */}
+      <VideoUnveil />
       <InteractiveAssessment />
-      <FounderStory />
+      {/* <FounderStory /> */}
       {/* <TestimonialsSection /> */}
       <FinalCTA />
       <Footer />

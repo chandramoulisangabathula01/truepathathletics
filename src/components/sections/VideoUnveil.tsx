@@ -228,7 +228,6 @@ export function VideoUnveil({
             className="absolute inset-0 w-full h-full object-cover"
             playsInline
             loop
-            autoPlay
             muted={isMuted}
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
