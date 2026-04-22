@@ -19,14 +19,13 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
     gsap.registerPlugin(ScrollTrigger);
 
     const lenis = new Lenis({
-      duration: 0.65,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
+      lerp: 0.08,             // Linear interpolation for a buttery, continuous flow
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1.08,
-      touchMultiplier: 1.15,
-      syncTouch: false,
+      wheelMultiplier: 1.25,  // Increased slightly so scrolling feels faster and more responsive
+      touchMultiplier: 1.35, 
+      syncTouch: true,        // syncTouch true often makes mobile flow feel more native
     });
 
     const onLenisScroll = () => {
