@@ -365,7 +365,7 @@ export function StatementBand() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden border-y border-white/5 bg-background-light/20 py-14 sm:py-18 md:py-20"
+      className="relative overflow-hidden border-y border-white/5 bg-background-light/20 py-8 sm:py-16 md:py-20"
     >
       {/* Ambient background glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -380,7 +380,7 @@ export function StatementBand() {
           {/* ★ FIXED: Invisible structural placeholder — no ghost text visible */}
           <h2
             aria-hidden="true"
-            className="pointer-events-none select-none text-center font-serif text-xl leading-relaxed text-transparent sm:text-2xl md:text-4xl"
+            className="pointer-events-none select-none text-center font-serif text-lg leading-relaxed text-transparent sm:text-2xl md:text-4xl"
           >
             Most athletes don&apos;t quit because of talent. They quit because
             they{" "}
@@ -395,7 +395,7 @@ export function StatementBand() {
             className="pointer-events-none absolute inset-0 z-10"
             style={{ clipPath: "inset(0 100% 0 0)", willChange: "clip-path" }}
           >
-            <h2 className="text-center font-serif text-xl leading-relaxed text-text-main sm:text-2xl md:text-4xl">
+            <h2 className="text-center font-serif text-lg leading-relaxed text-text-main sm:text-2xl md:text-4xl">
               Most athletes don&apos;t quit because of talent. They quit because
               they{" "}
               <span className="text-accent-lime font-sans font-bold italic drop-shadow-[0_0_20px_rgba(190,255,50,0.3)]">

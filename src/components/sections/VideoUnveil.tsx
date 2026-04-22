@@ -198,13 +198,13 @@ export function VideoUnveil({
   }, []);
 
   return (
-    <section ref={containerRef} className="py-16 sm:py-24 md:py-28 lg:py-32 bg-background-light/5">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-12 lg:mb-16 text-center">
+    <section ref={containerRef} className="py-8 sm:py-24 md:py-28 lg:py-32 bg-background-light/5">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-12 lg:mb-16 text-center">
         <RevealSection>
           <span className="text-accent-lime font-bold tracking-[0.2em] text-[10px] sm:text-xs uppercase mb-3 sm:mb-4 block">
             Video
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif mb-4 sm:mb-6">
+          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-serif mb-4 sm:mb-6">
             {title}
           </h2>
           <p className="text-sm sm:text-base text-text-soft max-w-2xl mx-auto">

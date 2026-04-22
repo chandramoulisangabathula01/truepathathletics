@@ -269,7 +269,7 @@ export function TruePathSystem() {
             <span className="text-accent-lime font-bold tracking-[0.2em] text-xs sm:text-sm uppercase mb-3 sm:mb-4 block">
               The System
             </span>
-            <h2 className="mb-4 text-[1.9rem] leading-tight font-serif sm:mb-6 sm:text-4xl md:text-5xl">
+            <h2 className="mb-4 text-2xl leading-tight font-serif sm:mb-6 sm:text-4xl md:text-5xl">
               A guidance system built{" "}
               <br className="hidden sm:block" />
               around stages, not shortcuts.

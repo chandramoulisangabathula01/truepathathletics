@@ -19,8 +19,8 @@ export function PrecisionReveal({
   children,
   direction = "up",
   delay = 0,
-  duration = 1.2,
-  distance = 50,
+  duration = 0.68,
+  distance = 34,
   stagger = 0,
 }: PrecisionRevealProps) {
   const elementRef = useRef<HTMLDivElement>(null);
@@ -42,7 +42,7 @@ export function PrecisionReveal({
           opacity: 0,
           x,
           y,
-          filter: "blur(10px)",
+          filter: "blur(6px)",
         },
         {
           opacity: 1,
@@ -52,11 +52,12 @@ export function PrecisionReveal({
           duration,
           delay,
           stagger,
-          ease: "expo.out",
+          ease: "power2.out",
           scrollTrigger: {
             trigger: element,
-            start: "top 85%",
-            toggleActions: "play none none none",
+            start: "top 92%",
+            once: true,
+            fastScrollEnd: true,
           },
         }
       );

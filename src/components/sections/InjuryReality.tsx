@@ -296,20 +296,20 @@ export function InjuryReality() {
           </div>
 
           {/* 2x2 Grid */}
-          <div className="grid grid-cols-1 gap-0 sm:grid-cols-2">
+          <div className="grid grid-cols-2 gap-0 sm:grid-cols-2 border border-red-500/[0.08] sm:border-none">
             {points.map((point, i) => (
               <div
                 key={i}
                 ref={(el) => {
                   itemsRef.current[i] = el;
                 }}
-                className={`group border-b border-red-500/[0.08] p-6 last:border-b-0 sm:border-b-0 sm:p-8 lg:p-10 ${
+                className={`group border-red-500/[0.08] p-4 sm:p-8 lg:p-10 ${
                   i === 0
-                    ? "sm:border-r sm:border-b border-red-500/[0.08]"
+                    ? "border-r border-b"
                     : i === 1
-                    ? "sm:border-b border-red-500/[0.08]"
+                    ? "border-b"
                     : i === 2
-                    ? "sm:border-r border-red-500/[0.08]"
+                    ? "border-r"
                     : ""
                 }`}
               >

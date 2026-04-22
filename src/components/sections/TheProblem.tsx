@@ -967,7 +967,7 @@ const ProblemCard = ({
         delay: index * 0.05,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className={`grid items-center gap-6 sm:gap-8 lg:gap-16 ${
+      className={`grid items-center gap-6 sm:gap-8 lg:gap-16  ${
         isLeft ? "lg:grid-cols-[1.05fr_1fr]" : "lg:grid-cols-[1fr_1.05fr]"
       }`}
     >
@@ -982,7 +982,7 @@ const ProblemCard = ({
           ease: [0.22, 1, 0.36, 1],
         }}
       >
-        <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_10px_40px_rgba(0,0,0,0.18)]">
+        <div className="group relative overflow-hidden rounded-2xl border-2 border-white/90 bg-white/[0.03] shadow-[0_10px_40px_rgba(0,0,0,0.18)]">
           <motion.img
             src={problem.image}
             alt={problem.title}
@@ -997,7 +997,7 @@ const ProblemCard = ({
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
 
           <motion.div
-            className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent-lime/60 to-transparent"
+            className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent"
             initial={{ opacity: 0, scaleX: 0.7 }}
             animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.25 }}
@@ -1017,14 +1017,14 @@ const ProblemCard = ({
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.55, delay: 0.15 }}
         >
-          <span className="text-sm font-bold tracking-[0.24em] text-accent-lime/90 sm:text-base">
+          <span className="text-sm font-bold tracking-[0.24em] text-white/95 sm:text-base">
             {problem.number}
           </span>
-          <span className="h-px w-14 bg-accent-lime/50" />
+          <span className="h-px w-14 bg-white/70" />
         </motion.div>
 
         <motion.h3
-          className="max-w-xl text-[1.75rem] font-bold leading-[1.08] text-text-heading sm:text-[2.25rem] lg:text-[3rem]"
+          className="max-w-xl text-[1.25rem] font-bold leading-[1.08] text-white sm:text-[2.25rem] lg:text-[3rem]"
           initial={{ opacity: 0, y: 18 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
@@ -1033,7 +1033,7 @@ const ProblemCard = ({
         </motion.h3>
 
         <motion.p
-          className="mt-4 max-w-xl text-[0.98rem] leading-7 text-text-muted sm:mt-5 sm:text-lg sm:leading-8 lg:text-[1.2rem] lg:leading-9"
+          className="mt-4 max-w-xl text-sm leading-6 text-white/85 sm:mt-5 sm:text-lg sm:leading-8 lg:text-[1.2rem] lg:leading-9"
           initial={{ opacity: 0, y: 18 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.3 }}
@@ -1053,7 +1053,7 @@ const Divider = () => (
     viewport={{ once: true }}
     transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
   >
-    <div className="mx-auto h-px w-full max-w-4xl bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+    <div className="mx-auto h-px w-full max-w-4xl bg-gradient-to-r from-transparent via-white/35 to-transparent" />
   </motion.div>
 );
 
@@ -1062,7 +1062,7 @@ export function TheProblem() {
   const headerInView = useInView(headerRef, { once: true, margin: "-40px" });
 
   return (
-    <section className="relative overflow-hidden bg-background-deep">
+    <section className="relative overflow-hidden ml-4 mr-4 rounded-t-[72px] sm:rounded-t-[112px] bg-[#0b1f4d]">
       {/* subtle background glow */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <motion.div
@@ -1082,7 +1082,7 @@ export function TheProblem() {
           className="mx-auto mb-12 max-w-3xl text-center sm:mb-16 lg:mb-20"
         >
           <motion.span
-            className="inline-block text-xs font-bold uppercase tracking-[0.28em] text-accent-lime/90 sm:text-sm"
+            className="inline-block text-xs font-bold uppercase tracking-[0.28em] text-white sm:text-sm"
             initial={{ opacity: 0, letterSpacing: "0.18em" }}
             animate={headerInView ? { opacity: 1, letterSpacing: "0.28em" } : {}}
             transition={{ duration: 0.6 }}
@@ -1091,7 +1091,7 @@ export function TheProblem() {
           </motion.span>
 
           <motion.h2
-            className="mt-3 text-3xl font-bold leading-[1.04] text-text-heading sm:mt-4 sm:text-5xl lg:text-6xl"
+            className="mt-3 text-2xl font-bold leading-[1.04] text-white sm:mt-4 sm:text-5xl lg:text-6xl"
             initial={{ opacity: 0, y: 18 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.75, delay: 0.1 }}
@@ -1100,7 +1100,7 @@ export function TheProblem() {
           </motion.h2>
 
           <motion.p
-            className="mx-auto mt-6 max-w-2xl text-base leading-8 text-text-muted sm:text-lg lg:text-[1.15rem]"
+            className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-white/85 sm:text-lg lg:text-[1.15rem]"
             initial={{ opacity: 0, y: 18 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.75, delay: 0.2 }}

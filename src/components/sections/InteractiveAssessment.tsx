@@ -446,9 +446,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { motion, AnimatePresence } from "motion/react";
-import { RevealSection } from "@/components/animations/RevealSection";
-import Stepper, { Step } from "@/components/ui/Stepper";
+import { motion } from "motion/react";
 import {
   CheckCircle2,
   ArrowRight,
@@ -462,13 +460,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function InteractiveAssessment() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const progressBarRef = useRef<HTMLDivElement>(null);
   const resultCardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const ctaRef = useRef<HTMLDivElement>(null);
 
   const [assessmentData, setAssessmentData] = useState<Record<string, string>>(
     {}
   );
+  const [currentStep, setCurrentStep] = useState(0);
   const [isCompleted, setIsCompleted] = useState(false);
 
   const questions = [
@@ -525,23 +523,25 @@ export function InteractiveAssessment() {
   const totalSteps = questions.length;
   const answeredCount = Object.keys(assessmentData).length;
   const progress = (answeredCount / totalSteps) * 100;
+  const currentQuestion = questions[currentStep];
+  const currentSelection = assessmentData[currentQuestion.id];
 
   const handleOptionSelect = (stepId: string, option: string) => {
     setAssessmentData((prev) => ({ ...prev, [stepId]: option }));
   };
 
+  const handleNextStep = () => {
+    if (!currentSelection) return;
+    if (currentStep === totalSteps - 1) {
+      handleAssessmentComplete();
+      return;
+    }
+    setCurrentStep((prev) => prev + 1);
+  };
+
   const handleAssessmentComplete = () => {
     setIsCompleted(true);
   };
-
-  useEffect(() => {
-    if (!progressBarRef.current) return;
-    gsap.to(progressBarRef.current, {
-      width: `${progress}%`,
-      duration: 0.45,
-      ease: "power3.out",
-    });
-  }, [progress]);
 
   useEffect(() => {
     if (!isCompleted || !sectionRef.current) return;
@@ -671,152 +671,92 @@ export function InteractiveAssessment() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen overflow-hidden bg-background-deep"
+      className="relative h-[100svh] overflow-hidden bg-[#eef3f8]"
     >
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background-deep via-background-deep to-background-mid" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-lime/20 to-transparent" />
+      <div className="container mx-auto flex h-full items-center px-4 py-4 sm:px-6 sm:py-5 lg:px-8">
+        <div className="mx-auto w-full max-w-4xl">
+          <div className="mx-auto max-w-[980px]">
+            <h2 className="text-[2rem] font-bold tracking-tight text-[#1a2b4d] sm:text-[2.15rem]">
+              Direct Assessment
+            </h2>
+            <p className="mt-1 text-[1.4rem] text-[#2c3e59] sm:text-[1.5rem]">
+              Where is your athlete right now?
+            </p>
 
-      <div className="container mx-auto flex min-h-screen items-center px-5 py-6 sm:px-6 sm:py-8 lg:px-8">
-        <div className="mx-auto w-full max-w-3xl">
-          <div className="text-center">
-            <RevealSection>
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-accent-lime/90 sm:text-[11px]">
-                Direct Assessment
-              </span>
-
-              <h2 className="mt-3 text-2xl font-serif leading-tight text-text-heading sm:text-3xl lg:text-4xl">
-                Where is your athlete right now?
-              </h2>
-
-              <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-text-soft sm:text-base">
-                Answer four quick questions to clarify the current stage and best path forward.
+            <div className="mt-4">
+              <p className="text-center text-[0.98rem] font-semibold text-[#4e7fb4]">
+                {answeredCount} of {totalSteps} completed ({Math.round(progress)}%)
               </p>
-            </RevealSection>
-          </div>
 
-          <div className="mt-5 rounded-2xl border border-black/5 bg-surface p-4 shadow-brand-sm dark:border-white/10 dark:bg-surface-alt sm:mt-6 sm:p-5">
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-text-muted">
-                  Progress
-                </p>
-                <p className="mt-1 text-sm text-text-soft">
-                  {answeredCount} of {totalSteps} completed
-                </p>
-              </div>
-
-              <div className="text-sm font-medium text-text-main">
-                {Math.round(progress)}%
-              </div>
-            </div>
-
-            <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-black/5 dark:bg-white/5">
-              <div
-                ref={progressBarRef}
-                className="h-full rounded-full bg-accent-lime"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-          </div>
-
-          <div className="mt-5 sm:mt-6">
-            <Stepper
-              initialStep={1}
-              onFinalStepCompleted={handleAssessmentComplete}
-            >
-              {questions.map((q, idx) => (
-                <Step key={q.id}>
-                  <div className="rounded-3xl border border-black/5 bg-surface p-5 shadow-brand-md dark:border-white/10 dark:bg-surface-alt sm:p-6 lg:p-7">
-                    <div className="text-center">
-                      <motion.div
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.35 }}
-                        className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-background-light"
+              <div className="relative mt-2.5 px-3 sm:px-8">
+                <div className="absolute left-8 right-8 top-5 h-[3px] bg-[#d5e2f2] sm:left-14 sm:right-14" />
+                <div className="relative flex items-center justify-between">
+                  {questions.map((q, idx) => {
+                    const isCurrent = idx === currentStep;
+                    const isDone = idx < answeredCount;
+                    return (
+                      <div
+                        key={q.id}
+                        className={`flex h-10 w-10 items-center justify-center rounded-full text-[0.95rem] font-semibold sm:h-11 sm:w-11 ${
+                          isCurrent || isDone
+                            ? "bg-[#183f79] text-white shadow-[0_2px_8px_rgba(24,63,121,0.35)]"
+                            : "bg-[#d3e4f7] text-[#456b95]"
+                        }`}
                       >
-                        {q.icon}
-                      </motion.div>
+                        {idx + 1}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
 
-                      <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-text-muted">
-                        Step {idx + 1} of {totalSteps}
-                      </p>
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="mt-4 max-h-[calc(100svh-235px)] overflow-y-auto rounded-xl border border-[#d4dde9] bg-white p-5 shadow-[0_8px_22px_rgba(25,46,76,0.08)] sm:p-6"
+            >
+              <h3 className="text-center text-[1.7rem] font-bold leading-none text-[#1d3766] sm:text-[1.9rem]">
+                Step {currentStep + 1} of {totalSteps}
+              </h3>
+              <p className="mt-3 text-center text-[1.35rem] leading-tight text-[#1e2f48] sm:text-[1.48rem]">
+                {currentQuestion.question}
+              </p>
 
-                      <h3 className="mx-auto mt-3 max-w-2xl text-xl font-serif leading-tight text-text-heading sm:text-2xl lg:text-[1.75rem]">
-                        {q.question}
-                      </h3>
-                    </div>
+              <div className="mx-auto mt-5 max-w-4xl space-y-2.5">
+                {currentQuestion.options.map((option, i) => {
+                  const isSelected = currentSelection === option;
 
-                    <div className="mt-6 grid grid-cols-1 gap-3 md:grid-cols-2">
-                      {q.options.map((option, i) => {
-                        const isSelected = assessmentData[q.id] === option;
+                  return (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => handleOptionSelect(currentQuestion.id, option)}
+                      className={`w-full rounded-lg border-2 px-4 py-2.5 text-center text-[1.02rem] font-medium shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] transition-all duration-200 ${
+                        isSelected
+                          ? "border-[#0e2f5f] bg-[#153d75] text-white shadow-[0_6px_16px_rgba(14,47,95,0.35)] hover:bg-[#1b4a8c]"
+                          : "border-[#5a78a1] bg-[#e4eef9] text-[#1d2d45] hover:-translate-y-[1px] hover:border-[#355f95] hover:bg-[#d5e4f7] hover:shadow-[0_6px_14px_rgba(53,95,149,0.22)]"
+                      }`}
+                    >
+                      {option}
+                    </button>
+                  );
+                })}
+              </div>
 
-                        return (
-                          <motion.button
-                            key={i}
-                            type="button"
-                            whileHover={{ y: -1 }}
-                            whileTap={{ scale: 0.99 }}
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.22, delay: i * 0.04 }}
-                            onClick={() => handleOptionSelect(q.id, option)}
-                            className={`group relative overflow-hidden rounded-2xl border p-4 text-left transition-all duration-200 ${
-                              isSelected
-                                ? "border-accent-lime/40 bg-accent-lime/[0.08] shadow-brand-sm"
-                                : "border-black/5 bg-background-light hover:border-accent-lime/20 hover:bg-surface-elevated dark:border-white/10 dark:bg-background-light"
-                            }`}
-                          >
-                            <AnimatePresence>
-                              {isSelected && (
-                                <motion.div
-                                  layoutId={`selectedbg-${q.id}`}
-                                  className="absolute inset-0 bg-gradient-to-br from-accent-lime/[0.07] to-transparent"
-                                  initial={{ opacity: 0 }}
-                                  animate={{ opacity: 1 }}
-                                  exit={{ opacity: 0 }}
-                                />
-                              )}
-                            </AnimatePresence>
-
-                            <div className="relative z-10 flex items-start justify-between gap-3">
-                              <span className="text-sm font-medium leading-6 text-text-main">
-                                {option}
-                              </span>
-
-                              <div
-                                className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border transition-all duration-200 ${
-                                  isSelected
-                                    ? "border-accent-lime bg-accent-lime"
-                                    : "border-text-muted/30"
-                                }`}
-                              >
-                                <AnimatePresence>
-                                  {isSelected && (
-                                    <motion.div
-                                      initial={{ scale: 0 }}
-                                      animate={{ scale: 1 }}
-                                      exit={{ scale: 0 }}
-                                      transition={{ type: "spring", bounce: 0.4 }}
-                                    >
-                                      <CheckCircle2 className="h-3 w-3 text-white" />
-                                    </motion.div>
-                                  )}
-                                </AnimatePresence>
-                              </div>
-                            </div>
-                          </motion.button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </Step>
-              ))}
-            </Stepper>
+              <div className="mt-5 text-center">
+                <button
+                  type="button"
+                  onClick={handleNextStep}
+                  disabled={!currentSelection}
+                  className="inline-flex min-w-[140px] items-center justify-center rounded-lg bg-[#173f7a] px-8 py-3 text-[1.05rem] font-semibold text-white transition-all duration-200 enabled:hover:bg-[#204b8e] enabled:hover:shadow-[0_5px_16px_rgba(23,63,122,0.35)] disabled:cursor-not-allowed disabled:bg-[#8ea8c9]"
+                >
+                  Next
+                </button>
+              </div>
+            </motion.div>
           </div>
-
-          <p className="mt-5 text-center text-xs italic text-text-muted sm:mt-6 sm:text-sm">
-            “The first step to progress is knowing exactly where you are.”
-          </p>
         </div>
       </div>
     </section>

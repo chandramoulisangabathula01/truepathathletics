@@ -1,4 +1,4 @@
-﻿// "use client";
+// "use client";
 
 // import { useEffect, useRef, useState } from "react";
 // import Link from "next/link";
@@ -302,7 +302,8 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { ArrowRight, Menu, X, Home, Users, Map, MessageSquare } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -323,6 +324,7 @@ const NAV_LINKS = [
 ] as const;
 
 export function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -575,7 +577,7 @@ export function Navbar() {
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
               </span>
             </Link>
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
           </div>
 
           {/* Mobile Controls */}
@@ -606,7 +608,7 @@ export function Navbar() {
                 )}
               />
             </button>
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
           </div>
         </div>
 
@@ -688,6 +690,36 @@ export function Navbar() {
               </span>
             </Link>
           </div>
+        </div>
+      </div>
+
+      {/* Mobile Bottom Dock */}
+      <div className="fixed bottom-0 inset-x-0 z-50 md:hidden bg-background-deep/95 backdrop-blur-2xl border-t border-white/5 pb-[env(safe-area-inset-bottom)] shadow-[0_-10px_40px_rgba(0,0,0,0.3)]">
+        <div className="flex justify-around items-center px-1 py-3">
+          {[
+            { name: "Home", href: "/", icon: Home },
+            { name: "Parents", href: "/for-parents", icon: Users },
+            { name: "Journey", href: "/journey", icon: Map },
+            { name: "Contact", href: "/contact", icon: MessageSquare },
+          ].map((item) => {
+            const isActive = pathname === item.href;
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  "flex flex-col items-center justify-center w-16 gap-1.5 transition-colors duration-300",
+                  isActive ? "text-accent-lime" : "text-text-soft hover:text-white"
+                )}
+              >
+                <Icon className={cn("w-6 h-6", isActive ? "drop-shadow-[0_0_8px_rgba(190,255,50,0.4)]" : "")} strokeWidth={1.5} />
+                <span className="text-[10px] font-medium tracking-wide">
+                  {item.name}
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </>

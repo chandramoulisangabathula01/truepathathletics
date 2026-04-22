@@ -117,7 +117,7 @@ export function TheTruth() {
         <div data-animate className="mb-7 sm:mb-12 md:mb-16">
           <SplitText
             text="&quot;Talent is not the problem. The path is.&quot;"
-            className="text-[1.85rem] leading-tight font-serif text-white sm:text-3xl sm:leading-snug md:text-5xl md:leading-tight lg:text-6xl"
+            className="text-2xl leading-tight font-serif text-white sm:text-3xl sm:leading-snug md:text-5xl md:leading-tight lg:text-6xl"
           />
         </div>
 
@@ -127,7 +127,7 @@ export function TheTruth() {
             data-animate
             className="space-y-3 sm:space-y-6"
           >
-            <p className="text-[0.98rem] font-light leading-relaxed text-gray-100 sm:text-lg md:text-xl lg:text-2xl">
+            <p className="text-sm font-light leading-relaxed text-gray-100 sm:text-lg md:text-xl lg:text-2xl">
               We&apos;ve worked with hundreds of athletes and families. The ones who
               thrive aren&apos;t the most talented. They&apos;re the ones who had{" "}
               <span className="text-accent-lime font-bold">clarity</span>

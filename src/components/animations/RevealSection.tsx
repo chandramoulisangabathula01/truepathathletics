@@ -20,8 +20,8 @@ export function RevealSection({
   className,
   delay = 0,
   direction = "up",
-  distance = 60,
-  duration = 1,
+  distance = 36,
+  duration = 0.62,
 }: RevealSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -39,27 +39,28 @@ export function RevealSection({
 
     gsap.fromTo(
       el,
-      {
-        opacity: 0,
-        x,
-        y,
-        filter: "blur(10px)",
-      },
-      {
-        opacity: 1,
-        x: 0,
-        y: 0,
-        filter: "blur(0px)",
-        duration,
-        delay,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-          toggleActions: "play none none none",
+        {
+          opacity: 0,
+          x,
+          y,
+          filter: "blur(6px)",
         },
-      }
-    );
+        {
+          opacity: 1,
+          x: 0,
+          y: 0,
+          filter: "blur(0px)",
+          duration,
+          delay,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 92%",
+            once: true,
+            fastScrollEnd: true,
+          },
+        }
+      );
   }, [direction, distance, duration, delay]);
 
   return (
